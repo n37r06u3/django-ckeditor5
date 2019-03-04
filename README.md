@@ -1,30 +1,38 @@
 Django CKEditor 5
 ===
 
-<!-- MarkdownTOC levels="1,2" autolink='true' -->
+# 介绍 #
+本项目整合了新版 [CKEditor 5](https://ckeditor.com/ckeditor-5/) 到Django. 老版本[django-ckeditor](https://github.com/django-ckeditor/django-ckeditor) 仍然在使用[CKEditor 4](https://ckeditor.com/ckeditor-4/). 
 
-- [Introduction](#introduction)
-- [Installation](#installation)
+根据 [ckeditor.com](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/migrate.html)官方说明，CKEditor 5是一个你没有用过的船新版本。
 
-<!-- /MarkdownTOC -->
+整体上仍然使用 [django-ckeditor](https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor)项目的架构。不同点是：
 
+- `static/ckeditor5` 包含最新的CKEditor 5经典编辑器（版本会随时更新，尽量与官方同步），[CKEditor 5下载](https://ckeditor.com/ckeditor-5/download/).
+- 移除了`extraPlugins`，老的一些插件，如代码插入编辑，目前不可以使用，需要其他方案。
+- 修改了`static/ckeditor5/ckeditor-init.js`部分代码， 在 `initialiseCKEditor` 方法里:
+    + extraPlugins处理方法代码被删除
+    + CKEditor 5 使用 `ClassicEditor.create` 来初始化创建编辑器，而不是用4的 `CKEDITOR.replace`
 
-# Introduction #
+# 安装 #
+pip install django-ckeditor5
 
-Django CKEditor 5 integrates [CKEditor 5](https://ckeditor.com/ckeditor-5/) with Django. The purpose of this package is the same as that of [the original django-ckeditor](https://github.com/django-ckeditor/django-ckeditor) except that we use CKEditor 5 while the original package uses [CKEditor 4](https://ckeditor.com/ckeditor-4/). 
+# 参考 #
+https://github.com/django-ckeditor/django-ckeditor
 
-According to [ckeditor.com](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/migrate.html):
+https://ckeditor.com/ckeditor-4/
 
->When compared to its predecessor, CKEditor 5 should be considered a totally new editor.
+https://github.com/pancodia/django-ckeditor5
 
-The implementation follows the structure of [ckeditor in django-ckeditor](https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor). So the usage should be very similar. The differences are:
+https://ckeditor.com/ckeditor-5/
 
-- `static/ckeditor5` contains the build of the classic ckeditor 5 v11.0.1. It was downloaded as a zip file from [CKEditor 5's download page](https://ckeditor.com/ckeditor-5/download/).
-- There is no `extraPlugins` in CKEditor 5. So the codes (in python, html, javascript) related to external plugins or external plugin resources are removed.
-- `static/ckeditor5/ckeditor-init.js` is modified. In the `initialiseCKEditor` function:
-    + The part that handles external plugins configuration  is removed. 
-    + Instead of `CKEDITOR.replace`, CKEditor 5 uses `ClassicEditor.create` to initialize/create an editor.
+# 变更 #
 
-# Installation #
+20190304 - v1.0.0 初始化项目 CKEditor 5集成v11.0.1, 新版本django2.1.7测试可用
 
+# TODO #
+添加安装说明
 
+添加代码格式化插件
+
+添加图片上传插件
