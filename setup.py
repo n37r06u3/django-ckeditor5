@@ -29,7 +29,7 @@ def get_source_files():
 setup(
     name='django-ckeditor5',
     version=version,
-    description='Django admin CKEditor 5 integration.',
+    description='Django CKEditor 5 集成',
     long_description=long_description,
     author='n37r06u3',
     author_email='n37r06u3@gmail.com',
@@ -37,7 +37,7 @@ setup(
     packages=find_packages(exclude=["*.demo"]),
     zip_safe=False,
     install_requires=[
-        'django-js-asset',
+        'django',
     ],
     include_package_data=True,
     classifiers=[
