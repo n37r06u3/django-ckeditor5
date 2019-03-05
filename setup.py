@@ -17,11 +17,8 @@ if sys.argv[-1] == 'tag':
     sys.exit()
 
 long_description = "\n".join([
-    open('README.md', 'r').read(),
-    open('AUTHORS.rst', 'r').read(),
-    open('CHANGELOG.rst', 'r').read(),
+    open('README.md', 'r', encoding='utf-8').read(),
 ])
-
 
 def get_source_files():
     for dirname, _, files in os.walk('ckeditor5/static/ckeditor5/ckeditor5/_source'):
