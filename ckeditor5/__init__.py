@@ -4,5 +4,5 @@
 # @Last Modified by:   panc25
 # @Last Modified time: 2018-09-06 15:08:56
 
-VERSION = (0, 0, 1)
+VERSION = (0, 0, 2)
 __version__ = '.'.join(map(str, VERSION))
