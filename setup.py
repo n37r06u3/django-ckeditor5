@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Author: panc25
-# @Date:   2018-09-06 14:50:06
-# @Last Modified by:   panc25
-# @Last Modified time: 2018-09-06 15:08:25
-
 #!/usr/bin/env python
 
 import os, sys
@@ -39,8 +34,8 @@ setup(
     version=version,
     description='Django admin CKEditor 5 integration.',
     long_description=long_description,
-    author='Pan Chao & Shaun Sephton & Piotr Malinski',
-    author_email='panchao25@gmail.com',
+    author='n37r06u3',
+    author_email='n37r06u3@gmail.com',
     url='',
     packages=find_packages(exclude=["*.demo"]),
     zip_safe=False,

@@ -36,3 +36,5 @@ https://ckeditor.com/ckeditor-5/
 添加代码格式化插件
 
 添加图片上传插件
+
+添加demo
