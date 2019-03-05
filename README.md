@@ -17,6 +17,19 @@ Django CKEditor 5
 # 安装 #
 pip install django-ckeditor5
 
+
+# 测试 #
+下载源码解压
+cd ckeditor5_demo
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+http://127.0.0.1:8000/admin/
+
 # 参考 #
 https://github.com/django-ckeditor/django-ckeditor
 

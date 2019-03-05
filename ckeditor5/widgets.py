@@ -70,7 +70,7 @@ class CKEditorWidget(forms.Textarea):
         self.config = DEFAULT_CONFIG.copy()
 
         # Try to get valid config from settings
-        configs = getattr(settings, 'CKEDITOR_CONFIGS', None)  # CKEditor 5 configuration in settings
+        configs = getattr(settings, 'CKEDITOR5_CONFIGS', None)  # CKEditor 5 configuration in settings
         if configs:
             if isinstance(configs, dict):
                 # Make sure the config_name exists
@@ -78,17 +78,17 @@ class CKEditorWidget(forms.Textarea):
                     config = configs[config_name]
                     # Make sure the configurations is a dictionary
                     if not isinstance(config, dict):
-                        raise ImproperlyConfigured('CKEDITOR_CONFIGS["%s"] \
+                        raise ImproperlyConfigured('CKEDITOR5_CONFIGS["%s"] \
                                 setting must be a dictionary type.' %
                                                         config_name)
                     # Override defaults with settings config
                     self.config.update(config)
                 else:
                     raise ImproperlyConfigured("No configuration named '%s' \
-                            found in your CKEDITOR_CONFIGS setting." %
+                            found in your CKEDITOR5_CONFIGS setting." %
                                                     config_name)
             else:
-                raise ImproperlyConfigured('CKEDITOR_CONFIGS setting must be a\
+                raise ImproperlyConfigured('CKEDITOR5_CONFIGS setting must be a\
                         dictionary type.')
 
     def render(self, name, value, attrs=None, renderer=None):

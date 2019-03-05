@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor5_demo',
+    'ckeditor5'
 ]
 
 MIDDLEWARE = [
@@ -118,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+CKEDITOR5_CONFIGS = {
+    'default': {
+        'toolbar': ["undo", "redo", "bold", "italic", "blockQuote", "imageTextAlternative", "imageUpload", "heading",
+                    "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
+    },
+}
