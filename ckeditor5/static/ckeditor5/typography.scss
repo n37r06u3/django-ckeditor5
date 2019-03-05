@@ -1,0 +1,351 @@
+$base-font-size: 19px;
+$base-font-size--rem: 1.9rem;
+$base-line-height: 25px;
+$base-line-height--rem: _space();
+
+$pretty-font-size: 17px;
+$pretty-font-size--rem: 1.7rem;
+$pretty-line-height: 28px;
+$pretty-line-height--rem: 2.8rem;
+
+$doc-font-size: 15px;
+$doc-font-size--rem: 1.5rem;
+$doc-line-height: 24px;
+$doc-line-height--rem: 2.4rem;
+
+$fonts-scale: (
+	'big': $base-font-size--rem + .2rem,
+	'normal': $base-font-size--rem,
+	'medium': $base-font-size--rem - .3rem,
+	'small': $base-font-size--rem - .6rem,
+	'tiny': $base-font-size--rem - .9rem
+);
+
+$header2-types: (
+	'module': 4.9rem,
+	'standard': 3.5rem
+);
+
+$header2-types--tablet: (
+	'module': 3.8rem,
+	'standard': 3.4rem
+);
+
+@mixin _pretty-text( $font-size: $base-font-size, $font-size--rem: $base-font-size--rem, $line-height: $pretty-line-height--rem ) {
+	@include _breakpoint--sm {
+		font-size: $font-size;
+		font-size: $font-size--rem;
+		line-height: $line-height;
+	}
+
+	h1, h2, h3, h4, h5 {
+		font-weight: 600;
+		letter-spacing: inherit;
+	}
+
+	h1 {
+		font: {
+			size: 3.3rem;
+			family: "Nunito Sans", sans-serif;
+			weight: 800;
+		}
+		line-height: 1.23;
+		margin-bottom: $line-height;
+	}
+
+	h2 {
+		font-size: 2.7rem;
+		line-height: $line-height;
+		margin-top: $line-height * 1.5;
+		margin-bottom: $line-height / 2;
+		letter-spacing: 0.03px;
+
+		& + h3 {
+			margin-top: 2rem;
+		}
+	}
+
+	h3 {
+		font-size: 2.2rem;
+		line-height: $line-height;
+		margin-top: $line-height;
+	}
+
+
+	h4 {
+		font: {
+			size: 1.8rem;
+			weight: 800;
+		}
+		line-height: $line-height;
+		margin: {
+			top: $line-height * 0.7777;
+			bottom: $line-height * 0.3333;
+		}
+	}
+
+	h5 {
+		font: {
+			size: 1.6rem;
+			weight: 800;
+		}
+		line-height: $line-height;
+		margin: {
+			top: $line-height * 0.7777;
+			bottom: $line-height * 0.3333;
+		}
+	}
+
+	h2, h3, h4, h5 {
+		& + p,
+		& + ol,
+		& + ul {
+			margin-top: 0;
+		}
+	}
+
+	p {
+		margin: {
+			top: $line-height;
+			bottom: $line-height;
+		}
+		letter-spacing: -.003rem;
+
+		img {
+			margin: {
+				top: 0;
+				bottom: 0;
+			}
+		}
+	}
+
+	img, figure, ol, ul, blockquote {
+		margin: {
+			top: $line-height;
+			bottom: $line-height;
+		}
+	}
+
+	figure {
+		img, table {
+			margin: {
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		th {
+			text-align: center;
+		}
+	}
+
+	ol,
+	ul {
+		ol, ul {
+			margin: 0;
+		}
+
+		li {
+			margin-top: .5rem;
+
+			&:first-of-type {
+				margin-top: 0;
+			}
+		}
+	}
+
+	table {
+		p,
+		ul,
+		ol,
+		figure,
+		blockquote {
+			margin: {
+				top: _space() / 2;
+				bottom: _space() / 2;
+			}
+		}
+	}
+}
+
+@function _font-scale( $type: normal ) {
+	@return map-get( $fonts-scale , quote( $type ) );
+}
+
+html {
+	font-size: 52.5%;
+
+	@include _breakpoint--sm {
+		font-size: 57.5%;
+
+		@include _hdpi {
+			font-size: 60%;
+		}
+	}
+
+	@include _breakpoint--md {
+		font-size: 62.5%;
+
+		@include _hdpi {
+			font-size: 65%;
+		}
+	}
+}
+
+body {
+	font-size: $base-font-size;
+	font-size: $base-font-size--rem;
+	line-height: 1.5;
+	color: _text-color( primary );
+	font-family: 'Nunito Sans', sans-serif;
+
+	@include _breakpoint--sm {
+		line-height: $base-line-height--rem;
+	}
+}
+
+.form-control {
+	&::-webkit-input-placeholder {
+		color: _text-color( hint );
+	}
+	&::-moz-placeholder {
+		color: _text-color( hint );
+	}
+	&:-ms-input-placeholder {
+		color: _text-color( hint );
+	}
+}
+
+pre, code, kbd {
+	font-family: Monaco, Consolas, "Courier New", monospace;
+}
+
+kbd {
+	font-size: 75%;
+	background-color: _gray-hex( silver );
+	color: _text-color();
+}
+
+h1, h2, h3, h4, h5, p {
+	max-width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: {
+		top: 0;
+		bottom: 0;
+	}
+	letter-spacing: -0.5px;
+}
+
+h1 {
+	font: {
+		size: 4rem;
+		weight: 800;
+	}
+	line-height: $base-line-height--rem * 2;
+
+	@include _breakpoint--sm {
+		font: {
+			size: 4.4rem;
+		}
+	}
+}
+
+h2 {
+	font: {
+		size: 3.2rem;
+		weight: 400;
+	}
+	line-height: 4rem;
+
+	@include _breakpoint--sm {
+		font: {
+			size: map-get( $header2-types--tablet, 'standard' );
+			weight: 200;
+		}
+		line-height: $base-line-height--rem * 2;
+	}
+
+	@include _breakpoint--md {
+		font-size: map-get( $header2-types, 'standard' );
+	}
+}
+
+h3 {
+	font: {
+		size: 3rem;
+		weight: 200;
+	}
+	line-height: $base-line-height--rem + 1rem;
+	margin: {
+		top: 1rem;
+		bottom: .5rem;
+	}
+}
+
+h4 {
+	font-size: 2rem;
+	line-height: $base-line-height--rem;
+}
+
+h5 {
+	font-size: 1.7rem;
+	line-height: $base-line-height--rem;
+}
+
+h4,
+h5 {
+	font-weight: 600;
+}
+
+p, ul, ol, table, figure {
+	margin: {
+		top: $base-line-height--rem;
+		bottom: $base-line-height--rem;
+	}
+}
+
+ol,
+ul {
+	ol, ul {
+		margin: 0;
+	}
+}
+
+a {
+	// color: rgba( _color( primary ), .9 );
+	color: _color( 'pretty-link' );
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+		color: darken( _color( 'pretty-link' ), 10 );
+	}
+}
+
+.pretty-text {
+	@include _pretty-text( $pretty-font-size, $pretty-font-size--rem, $pretty-line-height--rem );
+}
+
+.pretty-text--sm {
+	@include _pretty-text( $base-font-size, $base-font-size--rem, $base-line-height--rem );
+}
+
+.pretty-text--doc {
+	@include _pretty-text( $doc-font-size, $doc-font-size--rem, $doc-line-height--rem );
+}
+
+.module {
+	h2 {
+		font-size: 3.4rem;
+
+		@include _breakpoint--sm {
+			font-size: map-get( $header2-types--tablet, 'module' );
+		}
+
+		@include _breakpoint--md {
+			font-size: map-get( $header2-types, 'module' );
+		}
+	}
+}
