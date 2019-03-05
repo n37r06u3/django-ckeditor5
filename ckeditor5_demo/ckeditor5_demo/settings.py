@@ -124,5 +124,7 @@ CKEDITOR5_CONFIGS = {
     'default': {
         'toolbar': ["undo", "redo", "bold", "italic", "blockQuote", "imageTextAlternative", "imageUpload", "heading",
                     "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
+        'height': '300px',
+        'width': '100%',
     },
 }

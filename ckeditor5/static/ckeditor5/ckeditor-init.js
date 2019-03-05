@@ -50,10 +50,13 @@
                 var t = textareas[i];
                 if (t.getAttribute('data-processed') == '0' && t.id.indexOf('__prefix__') == -1) {
                     t.setAttribute('data-processed', '1');
-                    // CKEDITOR.replace(t.id, JSON.parse(t.getAttribute('data-config')));  // CKEditor 4
+                    var config = JSON.parse(t.getAttribute('data-config'))
                     ClassicEditor
-                        .create(document.querySelector('#'+t.id),
-                                JSON.parse(t.getAttribute('data-config')))
+                        .create(document.querySelector('#'+t.id), config)
+                        .then(editor =>{
+                            editor.ui.view.editable.editableElement.style.height = config.height || '300px';
+                            editor.ui.view.element.style.width = config.width|| '100%';
+                        })
                         .catch( error => {
                             console.log( error );
                         });
