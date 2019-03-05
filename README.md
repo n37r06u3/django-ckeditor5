@@ -17,6 +17,11 @@ Django CKEditor 5
 # 安装 #
 pip install django-ckeditor5
 
+升级
+pip install django-ckeditor5 -U 
+
+github
+pip install git+https://github.com/n37r06u3/django-ckeditor5
 
 # 测试 #
 下载源码解压
