@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-# @Author: panc25
-# @Date:   2018-09-05 13:56:55
-# @Last Modified by:   panc25
-# @Last Modified time: 2018-09-05 21:17:20
-
 from __future__ import absolute_import
 
 from django import forms
