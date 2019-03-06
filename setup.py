@@ -33,7 +33,7 @@ setup(
     long_description=long_description,
     author='n37r06u3',
     author_email='n37r06u3@gmail.com',
-    url='',
+    url='https://github.com/n37r06u3/django-ckeditor5',
     packages=find_packages(exclude=["*.demo"]),
     zip_safe=False,
     install_requires=[

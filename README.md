@@ -23,6 +23,30 @@ pip install django-ckeditor5 -U
 github
 pip install git+https://github.com/n37r06u3/django-ckeditor5
 
+# 配置 #
+添加app
+```
+INSTALLED_APPS = [
+    ...
+    'ckeditor5'
+]
+```
+基础配置
+```
+CKEDITOR5_CONFIGS = {
+    'default': {
+        'toolbar': ["undo", "redo", "bold", "italic", "blockQuote", "imageTextAlternative", "imageUpload", "heading",
+                    "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
+        'height': '300px',
+        'width': '100%',
+    },
+}
+```
+模型定义
+```
+from ckeditor5.fields import RichTextField
+```
+
 # 测试 #
 下载源码解压
 cd ckeditor5_demo
@@ -48,9 +72,9 @@ https://ckeditor.com/ckeditor-5/
 
 20190304 - v0.0.1 初始化项目 CKEditor 5集成v11.0.1, 新版本django2.1.7测试可用
 
-20190304 - v0.0.2 添加demo
+20190305 - v0.0.2 添加demo
 
-20190304 - v0.0.3 添加大小配置
+20190306 - v0.0.3 添加大小配置
 
 # TODO #
 添加代码格式化插件
