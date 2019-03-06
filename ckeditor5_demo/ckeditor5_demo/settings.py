@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -126,5 +126,10 @@ CKEDITOR5_CONFIGS = {
                     "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
         'height': '300px',
         'width': '100%',
+        'language': 'zh',
+'resize': {
+       'minHeight': 300,
+        'maxHeight': 800
+    }
     },
 }

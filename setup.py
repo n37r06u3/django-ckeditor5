@@ -38,6 +38,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'django',
+        'django-js-asset',
     ],
     include_package_data=True,
     classifiers=[

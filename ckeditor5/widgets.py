@@ -36,7 +36,7 @@ class LazyEncoder(DjangoJSONEncoder):
 json_encode = LazyEncoder().encode
 
 DEFAULT_CONFIG = {
-    'toolbar': ['Source', '-', 'Bold', 'Italic'],
+    'toolbar': ['bold', 'italic'],
 }
 
 
@@ -57,6 +57,8 @@ class CKEditorWidget(forms.Textarea):
                     ),
                 }),
             'ckeditor5/ckeditor_build_classic/ckeditor.js',
+            'ckeditor5/ckeditor_build_classic/translations/zh.js',
+            'ckeditor5/ckeditor_build_classic/translations/zh-cn.js',
         )
 
     def __init__(self, config_name='default', *args, **kwargs):
