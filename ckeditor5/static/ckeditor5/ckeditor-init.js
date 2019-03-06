@@ -54,8 +54,8 @@
                     ClassicEditor
                         .create(document.querySelector('#'+t.id), config)
                         .then(editor =>{
-                            editor.ui.view.editable.editableElement.style.minHeight = config.height || '300px';
-                            editor.ui.view.element.style.width = config.width|| '100%';
+                            editor.ui.view.editable.editableElement.style.minHeight = config.height;
+                            editor.ui.view.element.style.width = config.width;
                         })
                         .catch( error => {
                             console.log( error );
