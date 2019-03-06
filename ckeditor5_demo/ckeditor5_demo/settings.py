@@ -126,10 +126,5 @@ CKEDITOR5_CONFIGS = {
                     "imageStyle:full", "imageStyle:side", "link", "numberedList", "bulletedList"],
         'height': '300px',
         'width': '100%',
-        'language': 'zh',
-'resize': {
-       'minHeight': 300,
-        'maxHeight': 800
-    }
     },
 }
