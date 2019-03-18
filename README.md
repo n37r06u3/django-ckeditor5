@@ -47,6 +47,12 @@ CKEDITOR5_CONFIGS = {
 from ckeditor5.fields import RichTextField
 ```
 
+
+添加插件
+https://www.npmjs.com/package/ckeditor5-code-block
+
+
+
 # 测试 #
 下载源码解压
 cd ckeditor5_demo
@@ -76,9 +82,9 @@ https://ckeditor.com/ckeditor-5/
 
 20190306 - v0.0.3 添加大小配置
 
-# TODO #
-添加代码格式化插件
+20190306 - v0.0.4 ckeditor5-build-classic11.0.1到v12.0.0 添加 https://www.npmjs.com/package/ckeditor5-code-block
 
+# TODO #
 添加图片上传插件
 
 添加html源码查看插件
